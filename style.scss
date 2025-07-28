@@ -1,6 +1,69 @@
-
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+:root {
+  --size-image: 20rem;
+  --color-light-grayish: hsl(210, 46%, 95%);
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--color-light-grayish);
+  font-family: 'Manrope';
+}
+.container {
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  border: solid red;
+  width: min(90%, 60rem);
+  align-items: center;
+  &__section {
+    height: 100%;
+    padding: 2rem;
+  }
+  &__drawer-wrapper {
+    border: solid purple;
+    height: 100%;
+  }
+  &__drawer-img {
+    display: block;
+    height: 100%;
+    width: var(--size-image);
+  }
+  &__text-wrapper {
+    border: solid blue;
+    padding: 0;
+  }
+  &__profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    &-pic {
+     height: 3rem;
+     border-radius: 50%;
+    }
+    &-info p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  &__share-btn {
+    position: absolute;
+    right: 0;
+    top: 1rem;
+  }
+  &__footer-wrapper {
+    position: relative;
+    display: block;
+    border: solid green;
+    padding: 0 1rem;
+  }
+}
 .attribution { 
-  font-size: 11px;
+  font-size: 1rem;
   text-align: center; 
   & a {
     color: hsl(228, 45%, 44%);
