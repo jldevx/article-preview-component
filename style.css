@@ -5,6 +5,8 @@
 :root {
   --size-image: 20rem;
   --color-light-grayish: hsl(210, 46%, 95%);
+  --color-grayish: hsl(212, 23%, 69%);
+  --color-dark-grayish: hsl(217, 19%, 35%);
 }
 
 body {
@@ -14,62 +16,75 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: var(--color-light-grayish);
-  font-family: "Manrope";
+  font-family: 'Manrope';
 }
 
 .container {
-  background-color: hsl(0, 0%, 100%);
+  background-color: white;
   display: flex;
-  border: solid red;
-  width: min(90%, 60rem);
+  width: min(90%, 45rem);
   align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  color: var(--color-dark-grayish);
+  box-shadow: 10px 40px 20px rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
 }
+
 .container__section {
   height: 100%;
   padding: 2rem;
 }
+
+.container__section h2 {
+  margin: 0;
+}
+
 .container__drawer-wrapper {
-  border: solid purple;
   height: 100%;
 }
+
 .container__drawer-img {
   display: block;
   height: 100%;
   width: var(--size-image);
 }
+
 .container__text-wrapper {
-  border: solid blue;
   padding: 0;
 }
+
 .container__profile {
   display: flex;
   align-items: center;
   gap: 1rem;
+  position: relative;
 }
+
 .container__profile-pic {
-  height: 3rem;
+  height: 2.5rem;
   border-radius: 50%;
 }
+
 .container__profile-info p {
   margin: 0;
   padding: 0;
 }
+
 .container__share-btn {
   position: absolute;
   right: 0;
-  top: 1rem;
-}
-.container__footer-wrapper {
-  position: relative;
-  display: block;
-  border: solid green;
-  padding: 0 1rem;
+  top: .5rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: none;
 }
 
 .attribution {
   font-size: 1rem;
   text-align: center;
 }
+
 .attribution a {
-  color: hsl(228, 45%, 44%);
-}/*# sourceMappingURL=style.css.map */
+  color: #3e52a3;
+}
