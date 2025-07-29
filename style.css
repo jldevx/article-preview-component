@@ -26,9 +26,8 @@ body {
 .container {
   background-color: white;
   display: flex;
-  width: min(90%, 45rem);
+  width: min(90%, 40rem);
   align-items: center;
-  overflow: hidden;
   border-radius: 10px;
   color: var(--color-dark-grayish);
   box-shadow: 10px 40px 20px rgba(0, 0, 0, 0.1);
@@ -47,12 +46,16 @@ body {
 
 .container__drawer-wrapper {
   height: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .container__drawer-img {
   display: block;
   height: 100%;
-  width: var(--size-image);
+  width: 100%;
 }
 
 .container__text-wrapper p {
@@ -85,6 +88,18 @@ body {
   border: none;
 }
 
+.container__share-btn:active {
+  background-color: var(--color-dark-grayish);
+}
+
+.container__share-btn-logo {
+  color: #6E8098;
+}
+
+.container__share-btn-logo:active {
+  color: #fff;
+}
+
 .product-info-wrapper {
   display: flex;
 }
@@ -99,8 +114,43 @@ body {
   color: #3e52a3;
 }
 
-.toggleOn {
-  width: 100%;
+.share-menu {
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  color: white;
+  right: -5.9rem;
+  top: -4.9rem;
+  padding: 0 2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: var(--color-dark-grayish);
+}
+
+.share-menu::after {
+  content: '';
+  position: absolute;
+  z-index: 6;
+  bottom: -.8rem;
+  right: 6rem;
+  border-top: 1rem solid var(--color-dark-grayish);
+  border-right: .9rem solid transparent;
+  border-left: .9rem solid transparent;
+}
+
+.share-menu-list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  gap: 1rem;
+}
+
+.share-menu-on {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media all and (max-width: 45rem) {
@@ -109,11 +159,22 @@ body {
     width: min(70%, 45rem);
   }
   .container__drawer-wrapper {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+  }
+  .container__drawer-wrapper {
     width: 100%;
   }
   .container__drawer-img {
     width: 100%;
     max-height: 15rem;
     object-fit: cover;
+  }
+  .share-menu-list {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    gap: 1rem;
   }
 }
