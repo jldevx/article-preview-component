@@ -119,12 +119,13 @@ body {
   pointer-events: none;
   display: flex;
   align-items: center;
+  letter-spacing: 0.5rem;
   gap: 1rem;
   position: absolute;
   color: white;
-  right: -5.9rem;
-  top: -4.9rem;
-  padding: 0 2rem;
+  right: -6.5rem;
+  top: -5rem;
+  padding: 0 1.5rem;
   border-radius: 10px;
   transition: all 0.3s ease;
   background-color: var(--color-dark-grayish);
@@ -133,9 +134,8 @@ body {
 .share-menu::after {
   content: '';
   position: absolute;
-  z-index: 6;
   bottom: -.8rem;
-  right: 6rem;
+  right: 6.5rem;
   border-top: 1rem solid var(--color-dark-grayish);
   border-right: .9rem solid transparent;
   border-left: .9rem solid transparent;
@@ -148,6 +148,11 @@ body {
   gap: 1rem;
 }
 
+.share-menu p {
+  color: var(--color-grayish);
+  font-size: 0.7rem;
+}
+
 .share-menu-on {
   opacity: 1;
   pointer-events: auto;
@@ -157,6 +162,7 @@ body {
   .container {
     flex-direction: column;
     width: min(70%, 45rem);
+    position: relative;
   }
   .container__drawer-wrapper {
     border-top-left-radius: 10px;
@@ -168,13 +174,44 @@ body {
   }
   .container__drawer-img {
     width: 100%;
-    max-height: 15rem;
+    max-height: 20rem;
     object-fit: cover;
+  }
+  .container__profile {
+    padding-top: 1.5rem;
+    position: static;
+  }
+  .container__share-btn {
+    right: 2rem;
+  }
+  .share-menu {
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 85%;
+    color: white;
+    padding: 0 2rem;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    background-color: var(--color-dark-grayish);
   }
   .share-menu-list {
     list-style: none;
     display: flex;
     padding: 0;
     gap: 1rem;
+  }
+  .share-menu::after {
+    display: none;
+  }
+  .share-menu-on {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
